@@ -1,13 +1,19 @@
 import { useEffect } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+// Import components
+import { Navbar } from 'components'
 
 // Import provider store
-import { actions } from 'store/main.store'
+import { actions } from 'store'
 
 // Import services
-import { GetCategoriesData } from 'services/main.service'
+import { GetCategoriesData } from 'services'
 
 // Import hooks
-import { useAppContext } from 'hooks/main.hook'
+import { useAppContext } from 'hooks'
+
+import AppRoutes from 'App.routes'
 
 // Import styles
 import 'styles/index.scss'
@@ -28,5 +34,12 @@ export default function App() {
         configureComponent()
     }, [])
 
-    return <main></main>
+    return (
+        <main>
+            <Router>
+                <Navbar />
+                <AppRoutes />
+            </Router>
+        </main>
+    )
 }

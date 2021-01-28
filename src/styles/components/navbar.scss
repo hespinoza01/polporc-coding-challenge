@@ -1,0 +1,48 @@
+.Navbar {
+    @include flex-vertical;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    .Navbar-logo {
+        width: 7.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .Navbar-nav {
+        background-color: $white;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        padding: 0 1rem;
+    }
+
+    .nav__item {
+        @include link-base;
+        position: relative;
+        padding: .5rem 1rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 60%;
+            height: 3px;
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: center;
+            transition: transform .2s ease-out;
+            border-radius: $border-radius;
+            background-color: currentColor;
+        }
+
+        &.active {
+            &::before {
+            transform: translateX(-50%) scaleX(1);
+        }
+        }
+    }
+}

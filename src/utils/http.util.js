@@ -1,4 +1,4 @@
-import { BASE_URL_SERVER } from 'utils/main.util'
+import { BASE_URL_SERVER } from 'utils'
 
 /**
  * Hook for make REST petitions

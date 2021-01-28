@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Store } from 'store/main.store'
+import { Store } from 'store'
 
 /**
  * Hook for extract app context state and reducer

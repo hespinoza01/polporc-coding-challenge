@@ -1,4 +1,4 @@
-import { ErrorAlert, Http } from 'utils/main.util'
+import { ErrorAlert, Http } from 'utils'
 
 /**
  * Fetch categories list from API

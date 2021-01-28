@@ -1,0 +1,29 @@
+// base styles for inputs
+@mixin input-base {
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+}
+
+// Link style base
+@mixin link-base {
+    display: inline-block;
+    text-decoration: none;
+    color: $secondary;
+    border: none;
+}
+
+// flexbox base declarations
+@mixin flex{
+    display: flex;
+}
+
+@mixin flex-horizontal {
+    @include flex;
+    flex-direction: row;
+}
+
+@mixin flex-vertical {
+    @include flex;
+    flex-direction: column;
+}
