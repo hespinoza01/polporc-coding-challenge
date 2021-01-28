@@ -7,5 +7,14 @@ import { Store } from 'store/main.store'
 export default function useAppContext() {
     const [state, dispatch] = useContext(Store)
 
-    return [state, dispatch]
+    /**
+     * Simplify dispatch invoke
+     * @param {String} type
+     * @param {Any} payload
+     */
+    const _dispatch = (type = '', payload = null) => {
+        dispatch({ type, payload })
+    }
+
+    return [state, _dispatch]
 }
