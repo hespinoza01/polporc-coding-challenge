@@ -1,3 +1,9 @@
+// Import assets
+import { CopyIcon } from 'assets'
+
+// Import utils
+import { copyClipboard } from 'utils'
+
 export default function Joke({ data }) {
     if (!data) {
         return null
@@ -5,6 +11,11 @@ export default function Joke({ data }) {
 
     return (
         <article className='Joke'>
+            <CopyIcon
+                className='icon copy'
+                title='Copiar chiste'
+                onClick={_ => copyClipboard(data.value)}
+            />
             <p className='Joke-value'>{data.value}</p>
             <ul className='Joke-info'>
                 <li className='info__item'>

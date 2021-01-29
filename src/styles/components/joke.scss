@@ -2,18 +2,30 @@
     background-color: $white;
     width: 50%;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    animation: show-joke .3s;
+
     @keyframes show-joke {
         from {
-            transform: scale();
+            transform: translateY(100%);
+            transform-origin: center top;
         }
     }
 
     &:last-child {
         margin-bottom: 2rem;
+    }
+
+    .copy {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        color: $secondary;
+        cursor: pointer;
     }
 
     .Joke-value {
