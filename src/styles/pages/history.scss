@@ -1,0 +1,11 @@
+.History {
+    @include flex-vertical;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    .empty-history {
+        color: lighten($color, 30);
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+}
