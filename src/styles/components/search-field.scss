@@ -1,0 +1,37 @@
+.SearchField {
+    @include flex-horizontal;
+    height: 35px;
+
+    .SearchField-input {
+        @include input-base;
+        font-size: 1rem;
+        border: $border;
+        border-color: transparent;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        margin-right: .5rem;
+        width: calc(100% - 35px);
+        transition: border-color .3s;
+
+        &:focus {
+            border-color: $secondary;
+        }
+    }
+
+    .SearchField-button {
+        @include input-base;
+        padding: 0;
+        background-color: $secondary;
+        color: $white;
+        border-radius: $border-radius;
+        width: 35px;
+        height: 35px;
+        transform: scale(1);
+        transform-origin: center;
+        transition: transform .3s;
+
+        &:active {
+            transform: scale(.95);
+        }
+    }
+}

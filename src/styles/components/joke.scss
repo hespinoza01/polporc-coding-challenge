@@ -1,0 +1,41 @@
+.Joke {
+    background-color: $white;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-bottom: 1rem;
+    @keyframes show-joke {
+        from {
+            transform: scale();
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 2rem;
+    }
+
+    .Joke-value {
+        font-size: 1.1rem;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .Joke-info {
+        @include flex-horizontal;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        list-style: none;
+    }
+
+    .info__item {
+        margin-bottom: .25rem;
+
+        strong {
+            color: $secondary;
+            margin-right: .5rem;
+        }
+    }
+}

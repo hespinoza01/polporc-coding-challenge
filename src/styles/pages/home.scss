@@ -1,0 +1,35 @@
+.Home {
+    .search {
+        @include flex-vertical;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        margin: 1rem auto;
+
+        .SelectField {
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .SearchField {
+            width: 100%;
+        }
+    }
+
+    .joke-container {
+        padding: 1rem 2rem;
+    }
+
+    .generate-joke {
+        @include input-base;
+        display: block;
+        background-color: $secondary;
+        color: $colorSecondary;
+        border-radius: $border-radius;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: .75rem 1.5rem;
+        letter-spacing: 1px;
+        margin: 1rem auto;
+    }
+}

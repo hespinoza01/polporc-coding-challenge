@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 // Import components
-import { Navbar } from 'components'
+import { Navbar, AppLoader } from 'components'
 
 // Import provider store
 import { actions } from 'store'
@@ -11,7 +11,7 @@ import { actions } from 'store'
 import { GetCategoriesData } from 'services'
 
 // Import hooks
-import { useAppContext } from 'hooks'
+import { useAppContext, useLoader } from 'hooks'
 
 import AppRoutes from 'App.routes'
 
@@ -20,6 +20,7 @@ import 'styles/index.scss'
 
 export default function App() {
     const [, dispatch] = useAppContext()
+    const [loader, enableLoader] = useLoader()
 
     /**
      * Load basic data to configure category list
@@ -28,6 +29,7 @@ export default function App() {
         const categories = await GetCategoriesData()
 
         dispatch(actions.CATEGORIES_SET, categories)
+        enableLoader()
     }
 
     useEffect(_ => {
@@ -39,6 +41,7 @@ export default function App() {
             <Router>
                 <Navbar />
                 <AppRoutes />
+                {loader.isShowing && <AppLoader />}
             </Router>
         </main>
     )

@@ -1,0 +1,22 @@
+.AppLoader {
+    @include full-screen;
+    @include flex-horizontal;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color, .65);
+    color: $emphasys;
+    z-index: 10000;
+
+    &:after {
+        @include full-screen;
+        content: '';
+        display: block;
+        pointer-events: none;
+        z-index: 10001;
+    }
+
+    .AppLoader-loader {
+        width: 7rem;
+        height: 7rem;
+    }
+}

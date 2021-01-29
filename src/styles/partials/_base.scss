@@ -10,3 +10,19 @@ body {
     font-family: sans-serif;
     background-color: $primary;
 }
+
+fieldset {
+    border: none;
+}
+
+.icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin: 0 auto;
+    fill: currentColor;
+
+    path,
+    rect {
+      fill: currentColor;
+    }
+}
