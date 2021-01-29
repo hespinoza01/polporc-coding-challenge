@@ -7,14 +7,6 @@
     box-shadow: $box-shadow;
     margin-bottom: 1.25rem;
     position: relative;
-    animation: show-joke .3s;
-
-    @keyframes show-joke {
-        from {
-            transform: translateY(100%);
-            transform-origin: center top;
-        }
-    }
 
     &:last-child {
         margin-bottom: 2rem;
