@@ -33,7 +33,7 @@ export const GetRandomJoke = (category = -1) =>
             console.error(error)
             ErrorAlert(error)
 
-            resolve({})
+            resolve(null)
         }
     })
 

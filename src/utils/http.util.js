@@ -14,11 +14,11 @@ export default function Http(pathUrl, options = {}) {
         fetch(fullURL, options)
             .then(response => {
                 if (response.status !== 200) {
-                    reject(response.text())
+                    reject('Error al realizar la petición')
                 }
 
                 resolve(response.json())
             })
-            .catch(error => reject(error))
+            .catch(error => reject(error.toString()))
     })
 }

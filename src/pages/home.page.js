@@ -9,6 +9,9 @@ import { useAppContext, useInput, useLoader } from 'hooks'
 // Import services
 import { GetRandomJoke, GetJokeSearchResult } from 'services'
 
+// Import utils
+import { randomKey } from 'utils'
+
 // import components
 import { SelectField, SearchField, Joke } from 'components'
 
@@ -36,7 +39,10 @@ export default function Home() {
      */
     const onRandom = async _ => {
         loader.show()
-        const data = await GetRandomJoke()
+        // Get category description for selected category
+        const _category = state.categories[category.value]
+
+        const data = await GetRandomJoke(_category)
 
         setJokes([data])
         dispatch(actions.HISTORY_APPEND, data)
@@ -60,7 +66,7 @@ export default function Home() {
                 </button>
 
                 {jokes.map(item => (
-                    <Joke data={item} />
+                    <Joke key={randomKey()} data={item} />
                 ))}
             </div>
         </section>

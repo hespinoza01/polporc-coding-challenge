@@ -26,13 +26,15 @@ export default function App() {
      * Load basic data to configure category list
      */
     const configureComponent = async _ => {
+        loader.show()
         const categories = await GetCategoriesData()
 
         dispatch(actions.CATEGORIES_SET, categories)
-        enableLoader()
+        loader.hide()
     }
 
     useEffect(_ => {
+        enableLoader()
         configureComponent()
     }, [])
 
